@@ -1,0 +1,15 @@
+---
+
+- name: ensure s3 bucket is deleted
+  s3_bucket:
+    # Fixed values
+    state: absent
+    force: yes
+    # Required values
+    name: "{{ s3.name }}"
+    # Optional values
+    region: "{{ s3.region | default(aws_s3_bucket_default_region | default(omit)) }}"
+    aws_access_key: "{{ lookup('ENV', 'AWS_ACCESS_KEY') | default(omit) }}"
+    aws_secret_key: "{{ lookup('ENV', 'AWS_SECRET_KEY') | default(omit) }}"
+    security_token: "{{ lookup('ENV', 'AWS_SECURITY_TOKEN') | default(omit) }}"
+    profile: "{{ aws_s3_bucket_profile | default(omit) }}"

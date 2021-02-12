@@ -8,3 +8,11 @@
     loop_var: s3
   with_items:
     - "{{ aws_s3_buckets }}"
+  when: aws_s3_bucket_state == "present"
+
+- include_tasks: delete_s3_bucket.yml
+  loop_control:
+    loop_var: s3
+  with_items:
+    - "{{ aws_s3_buckets }}"
+  when: aws_s3_bucket_state == "absent"

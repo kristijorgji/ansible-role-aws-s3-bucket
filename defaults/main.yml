@@ -5,5 +5,6 @@
 ###
 
 aws_s3_bucket_default_region: eu-central-1
+aws_s3_bucket_state: present
 
 aws_s3_buckets: []

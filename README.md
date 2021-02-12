@@ -18,6 +18,7 @@ Additional variables that can be used (either as `host_vars`/`group_vars` or via
 | Variable                    | Description                  |
 |-----------------------------|------------------------------|
 | `aws_s3_bucket_profile`     | Boto profile name to be used |
+| `aws_s3_bucket_state`     | Default is `present`, possible values: `present` or `absent`. absent deletes the resource        |
 | `aws_bucket_default_region` | Default region to use        |
 | `aws_bucket_default_policy` | Default policy to use        |
 
